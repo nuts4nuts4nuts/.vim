@@ -1,0 +1,8 @@
+# Ignore all swap files
+*.swp
+*.swo
+*.swn
+.netrwhist
+
+# Ignore plugins folder
+plugged/

@@ -1,0 +1,34 @@
+priority -50
+
+extends c
+
+# We want to overwrite everything in parent ft.
+priority -49
+
+snippet TEST "Google test template"
+TEST(${1:ClassName}, ${2:testName})
+{
+	// GIVEN
+	${0:Set up state};
+	// WHEN
+
+	// THEN
+
+}
+endsnippet
+
+snippet TESTF "Google test template for fixture"
+TEST_F(${1:FixtureClassName}, ${2:testName})
+{
+	// GIVEN
+	${0:Set up state};
+	// WHEN
+
+	// THEN
+
+}
+endsnippet
+
+
+
+# vim:ft=snippets:
