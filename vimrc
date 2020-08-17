@@ -409,9 +409,9 @@ noremap! >< .*
 " select mode anyway
 nnoremap gh :drop $MYVIMRC<CR>
 
-" Open ~/note/txt.txt for writing
-command! OpenNote drop ~/note/note.txt | normal G
-nnoremap <leader>n :OpenNote<CR>o<CR>[<C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>]<CR>
+" Open ~/note/note.md for writing
+command! OpenNote drop ~/note/note.md | normal G
+nnoremap <leader>n :OpenNote<CR>o<CR># <C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR><CR>
 " Open ~/note/txt.txt for reading
 nnoremap <leader>gn :OpenNote<CR>
 
