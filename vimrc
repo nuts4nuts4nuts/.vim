@@ -131,6 +131,9 @@ set noeb vb t_vb=
 " Cool colors
 set termguicolors
 
+" Increase scrollback in :terinal normal mode. Default is 10000
+set termwinscroll=100000
+
 " ### PARAMOUNT ### "
 colorscheme paramount-custom " TODO: Make this a real plugin
 set background=dark
@@ -409,11 +412,23 @@ noremap! >< .*
 " select mode anyway
 nnoremap gh :drop $MYVIMRC<CR>
 
-" Open ~/note/txt.txt for writing
-command! OpenNote drop ~/note/note.txt | normal G
-nnoremap <leader>n :OpenNote<CR>o<CR>[<C-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>]<CR>
-" Open ~/note/txt.txt for reading
-nnoremap <leader>gn :OpenNote<CR>
+" Open ~/note/note.md
+command! OpenNote drop ~/note/note.md | normal G
+nnoremap <leader>n :OpenNote<CR>
+" Find tag with grep
+function! NoteTags(...)
+	let tag = a:0 == 1 ? a:1 : ""
+	if tag == ""
+		silent grep! '\B\#[A-Za-z]' ~/note/note.md | redraw!
+	else
+		execute "silent grep! '\\B\\#".tag."' ~/note/note.md | redraw!"
+	endif
+endfunction
+
+command! -nargs=? NT call NoteTags(<f-args>)
+
+" FZF in note.md
+command! NF RG ~/note/
 
 " Make CTRL+Backspace work in insert mode... I feel like this worked before but idk
 inoremap  <C-w>
