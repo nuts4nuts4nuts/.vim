@@ -120,6 +120,8 @@ function! QuickFix_Toggle()
 	copen
 endfunction
 
+command! -nargs=1 GQ Gpull | Git add --all | Git commit -m "<args>" | Gpush
+
 "" SETTINGS
 if has('win32')
 	colorscheme desert
