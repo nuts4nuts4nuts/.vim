@@ -230,6 +230,8 @@ augroup me
 	autocmd!
 	" associate .p8 files with the lua filetype
 	autocmd BufNewFile,BufRead *.p8 setlocal ft=lua
+	" associate .script files with the lua filetype
+	autocmd BufNewFile,BufRead *.script setlocal ft=lua
 
 	" :make on a py file calls pylint and passes issues to quickfix
 	autocmd FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p
