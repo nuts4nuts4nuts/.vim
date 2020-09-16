@@ -7,7 +7,7 @@ endif
 " Plugins
 call plug#begin()
 Plug 'sheerun/vim-polyglot'							" Language support
-" Tim Poe
+" Tim Pope
 Plug 'tpope/vim-vinegar'								" Make netrw a little nicer
 Plug 'tpope/vim-surround'								" More functionality for changing text surrounded by stuff
 Plug 'tpope/vim-fugitive'								" Doing git stuff from vim
